@@ -1,11 +1,12 @@
 const Recipe = require('../models/recipeModel')
-const mongoose = require('mongoose')
+const mongoose = require('mongoose') // mongoose for schema/model
 
 // get all recipes
 const getRecipes = async (req, res) => {
     const recipes = await Recipe.find({}).sort({createdAt: -1})
     res.status(200).json(recipes)
 }
+
 
 // get ONE single recipe
 const getRecipe = async (req, res) => {
